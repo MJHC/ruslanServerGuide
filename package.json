@@ -1,0 +1,28 @@
+{
+  "name": "ruslanserverguide",
+  "version": "1.0.0",
+  "description": "Guide on how to set up a NodeJS server and host it on DigitalOcean with a domain.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MJHC/ruslanServerGuide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MJHC/ruslanServerGuide/issues"
+  },
+  "homepage": "https://github.com/MJHC/ruslanServerGuide#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "type": "module"
+}
