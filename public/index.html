@@ -8,8 +8,83 @@
     <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <div class="container">
+        <h1 class="title">Guide til opsætning af NodeJS server med eget domæne</h1>
 
+        <div class="guide">
+            <h1>GitHub PRO</h1>
+            
+            <p>Når man er studerende så tilbyder GitHub GitHub PRO gratis, samt nogle forskellige produkter gratis. herunder domæner og 100$ til DigitalOcean.<p>
+            
+            <p>For at få GitHub PRO, skal du gå ind på <a href="https://education.github.com/pack">det her link</a> og trykke på "Sign up for Student Developer Pack".</p>
+        </div>
+
+        <div class="guide">
+            <h1>DigitalOcean - Server Guide</h1>
+
+            <p>DigitalOcean er en hjemmeside som tilbyder virtuelle maskiner hvor man kan køre hjemmeside serverer på og meget andet.</p>
+
+            <p>Når du har fået GitHub PRO kan du gå ind på <a href="https://www.digitalocean.com/github-students/">DigitalOcean</a> og følge deres vejledning til opretning af bruger.</p>
+
+            <p>Hvis du har fulgt instruktionerne rigtigt burde <a href="https://cloud.digitalocean.com">din projects side</a> se sådan her ud:</p>
+
+            <img src="images/digital-ocean-front.png" alt="Billede af din DigitalOcean forside">
+
+            <p>Klik nu på den grønne create knap, og klik derefter på droplets, så burde du komme ind på denne side:</p>
+
+            <img src="images/digital-ocean-droplets.png" alt="Oprettelse af droplet">
+
+            <p>Vælg ubuntu, og en basic plan. Derefter rul ned til "Choose a datacenter region", her vælger du Frankfurt:</p>
+
+            <img src="images/digital-ocean-droplet-location.png" alt="Server localition">
+
+            <p>Herefter skal du vælge et password og et navn til din server:</p>
+
+            <img src="images/digital-ocean-droplet-user-pass.png" alt="Valg af password og username">
+
+            <p>Når du har fulgt punkterne her, kan du nederst på siden trykke "Create droplet". Nu har du din egen server!</p>
+        </div>
+
+        <div class="guide">
+            <h1>Name.com - Domæne Guide</h1>
+
+            <p>Name.com tilbyder 1 års gratis domæne til studerende med en GitHub Student Developer Pack.</p>
+
+            <p>Opret en konto med din GitHub på <a href="https://www.name.com/partner/github-students">Name.com</a> og følg instuktionerne på hjemmesiden.</p>
+
+            <p>Hvis du har gjort alting rigtigt burde din <a href="https://www.name.com/account">account side</a> gerne se sådan her ud:</p>
+
+            <img src="images/name-com-account.png" alt="Din name.com account">
+
+            <p>Klik på dit domæne navn, så får du nogle flere informationer og indstillinger:</p>
+
+            <img src="images/name-com-details.png" alt="Domæne indstillinger">
+
+            <p>Når du er inde på details siden, så skal du klikke på "Manage DNS Records" under <b>Domain Details</b></p>
+
+            <img src="images/name-com-dns.png">
+
+            <p>Her fortæller du hvilken ip dit domæne skal peje hen på når at folk skriver det ind i deres browser. I feltet <b>ANSWER</b> skal du skrive din DigitalOcean Servers IP adresse. Du kan finde IPen under <a href="https://cloud.digitalocean.com/droplets">Droplets</a> på din DigitalOcean side:</p>
+
+            <img src="images/digital-ocean-droplets-ip.png" alt="Droplets liste">
+
+            <p>Nu kan folk komme ind på din hjemmeside! Nu skal den bare skrives:)</p>
+        </div>
+
+        <div class="guide">
+            <h1>SSH - Fjernforbindelses Guide</h1>
+
+            <p>Nu har du lavet en server, en NodeJS application og et domæne. Og nu skal du have koblet din NodeJS application til din server. Denne guide fortæller dig hvordan du opretter en SSH forbindelse til din server og sætter den op til at køre din NodeJS application.</p>
+
+            <p>Du kan oprette forbindelse til din server, ved at skrive <code>ssh root@mydomain.com</code> i en terminal. Hvis du bruger windows, kan du bruge PowerShell. Jeg kan anbefale at du installere <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL2</a> på din windows maskine:)</p>
+
+            <img src="images/ssh.png" alt="SSH på terminalen">
+
+            <p>Du vil blive bedt om at skrive adgangskoden til serveren (adgangskoden er den som du lavede til din DigitalOcean Droplet).</p>
+        </div>
+
+        <a href="https://github.com/MJHC/ruslanServerGuide">GitHub Repo</a>
+    </div>
     <script src="./js/script.js"></script>
 </body>
 </html>
