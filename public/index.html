@@ -20,7 +20,7 @@
         </div>
 
         <div class="guide">
-            <h1>DigitalOcean - Server Guide</h1>
+            <h1>DigitalOcean - Server Opsætnings Guide</h1>
 
             <p>DigitalOcean er en hjemmeside som tilbyder virtuelle maskiner hvor man kan køre hjemmeside serverer på og meget andet.</p>
 
@@ -74,13 +74,88 @@
         <div class="guide">
             <h1>SSH - Fjernforbindelses Guide</h1>
 
-            <p>Nu har du lavet en server, en NodeJS application og et domæne. Og nu skal du have koblet din NodeJS application til din server. Denne guide fortæller dig hvordan du opretter en SSH forbindelse til din server og sætter den op til at køre din NodeJS application.</p>
+            <p>Nu har du lavet en server, en NodeJS application og et domæne. Og nu skal du have koblet din NodeJS application til din server. Denne guide fortæller dig hvordan du opretter en SSH forbindelse til din server, hvor du vil køre din NodeJS application på</p>
 
             <p>Du kan oprette forbindelse til din server, ved at skrive <code>ssh root@mydomain.com</code> i en terminal. Hvis du bruger windows, kan du bruge PowerShell. Jeg kan anbefale at du installere <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL2</a> på din windows maskine:)</p>
 
             <img src="images/ssh.png" alt="SSH på terminalen">
 
             <p>Du vil blive bedt om at skrive adgangskoden til serveren (adgangskoden er den som du lavede til din DigitalOcean Droplet).</p>
+
+            <p>Hvis du ser en besked om nogle SSH Keys eller noget lignende når du opretter forbindelse, så skal du bare skrive <code>yes</code></p>
+
+            <p>Når du har oprettet en SSH forbindelse til din server, burde du se noget lignende dette:</p>
+
+            <img src="images/ssh-connected.png" alt="Velkommen besked på SSH forbindelse">
+
+            <p>Nu er du inde på din DigitalOcean Droplet med en SSH forbindelse!</p>
+        </div>
+
+        <div class="guide">
+            <h1>Server Guide</h1>
+
+            <p>I denne guide vil jeg fortælle hvordan opsætter en NodeJS application med Express, PM2 og NGINX</p>
+
+            <p>Først skal du oprette forbindelse til din server med <a href="#">SSH</a>.</p>
+
+            <h2>NPM(Node Package Manager)</h2>
+
+            <p>Første gang du kommer ind på din server, har den ikke alle redskaberne til at lave din NodeJS application, derfor skal vi lige installere dem.</p>
+
+            <p>Vi starter med NPM:</p>
+
+            <p>I din terminal skal du skrive følgende:</p>
+
+            <p><code>apt install npm</code></p>
+
+            <p>Hvis den giver dig en error, så prøv at skrive:</p>
+
+            <p><code>apt install npm --fix-missing</code></p>
+
+            <p>Hvis det hele er gået efter planen burde det være installeret nu, du kan tjekke med denne kommando:</p>
+
+            <p><code>npm -v</code></p>
+
+            <p>Hvis du får et version nummer, er det installeret korrekt.</p>
+
+            <h2>PM2</h2>
+
+            <p>Det kan være du har flere applicationer, det kan være svært at holde styr på. Derfor installere vi PM2 som er en daemon process manager.</p>
+
+            <p>Installationen er lige frem:</p>
+
+            <p><code>npm install pm2 -g</code></p>
+
+            <p>Dette installere PM2 globalt.</p>
+
+            <p>Hvis du skriver <code>pm2 -v</code> får du et version nummer og så er PM2 installeret korrekt.</p>
+
+            <h2>NGINX</h2>
+
+            <p>NGINX er et stykke software som kan forbinde eksterne porte til dine interne porte, f. eks. <code>443 -> 3000</code>.</p>
+
+            <p>Installationen til NGINX er lidt mere kompliceret end de andre ting vi har installeret. Men bare følg denne guide, så burde det gå:)</p>
+
+            <p>Først navigere til <code>/etc/apt/sources.list.d/</code>:</p>
+
+            <p><code>cd /etc/apt/sources.list.d/</code></p>
+
+            <p>Opret herefter filen <code>nginx.list</code>:</p>
+
+            <p><code>touch nginx.list</code></p>
+
+            <p>hvis du nu skriver <code>ls</code>, så burde du se filen ovenover.</p>
+
+            <p>Gå nu ind i filen med <code>nano</code>.</p>
+
+            <p><code>nano nginx.list</code></p>
+
+            <p>Sæt nu det her ind:</p>
+
+            <p><code>
+                deb http://nginx.org/packages/ubuntu/ bionic nginx<br>
+                deb-src http://nginx.org/packages/ubuntu/  bionic nginx
+            </code></p>
         </div>
 
         <a href="https://github.com/MJHC/ruslanServerGuide">GitHub Repo</a>

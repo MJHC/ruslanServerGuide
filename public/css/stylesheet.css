@@ -43,3 +43,8 @@ p{
   border-radius: 20px;
   padding: 20px;
 }
+
+code{
+  background-color: aliceblue;
+  font-family: Consolas,monaco,monospace; 
+}
