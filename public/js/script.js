@@ -1,1 +1,3 @@
-alert('JavaScript!');
+function myAlert(){
+    alert('JavaScript!');
+}
